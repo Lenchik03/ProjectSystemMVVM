@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectSystemMauiHardNavigation.NewProjectPage"
+             Title="NewProjectPage">
+    <StackLayout>
+        <Label Text="Название"/>
+        <Entry Text="{Binding Project.Title}"/>
+        <Label Text="Сроки выполнения в днях"/>
+        <Slider Minimum="1" Maximum="360" ValueChanged="OnStepperValueChanged" BindingContext="{Binding Project.Deadlines}"/>
+        <Label x:Name="header"  FontSize="18" Margin="5" />
+        <Label Text="Проект"/>
+
+        <Button Text="Сохранить" Clicked="SaveClick"/>
+    </StackLayout>
+</ContentPage>

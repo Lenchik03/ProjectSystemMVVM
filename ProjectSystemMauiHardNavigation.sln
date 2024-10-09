@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSystemMauiHardNavigation", "ProjectSystemMauiHardNavigation\ProjectSystemMauiHardNavigation.csproj", "{42D9DAA3-9A2F-41D6-AE22-ED1B591ACDEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42D9DAA3-9A2F-41D6-AE22-ED1B591ACDEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D9DAA3-9A2F-41D6-AE22-ED1B591ACDEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D9DAA3-9A2F-41D6-AE22-ED1B591ACDEE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{42D9DAA3-9A2F-41D6-AE22-ED1B591ACDEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D9DAA3-9A2F-41D6-AE22-ED1B591ACDEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D9DAA3-9A2F-41D6-AE22-ED1B591ACDEE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EAE6A94-AFC8-4BC6-A159-D8082F29D73E}
+	EndGlobalSection
+EndGlobal
