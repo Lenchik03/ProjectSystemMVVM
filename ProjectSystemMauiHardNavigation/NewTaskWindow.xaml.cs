@@ -9,12 +9,11 @@ public partial class NewTaskWindow : ContentPage, IQueryAttributable
 
     public ProjectModel Project { get; set; }
 
-    public NewTaskWindow(TaskModel taskModel)
+    public NewTaskWindow()
     {
         InitializeComponent();
-        TaskM = taskModel;
-        UpdateList();
-        BindingContext = this;
+        
+        
         //Project = Projects.FirstOrDefault(s => s.Id == TaskM.ProjectId);
     }
 
@@ -53,7 +52,15 @@ public partial class NewTaskWindow : ContentPage, IQueryAttributable
 
     public async void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        //query["SelectedTask"]
-            await DisplayAlert("fdfdf", query["SelectedTask"].ToString(), "SelectedTask");
+        int id = (int)query["TaskId"];
+        if (id == 0)
+        {
+            TaskM = new TaskModel();
+        }
+        else
+            TaskM = await DB.GetInstance().TaskById(id);
+        UpdateList();
+        BindingContext = this;
+        //await DisplayAlert("fdfdf", query["SelectedTask"].ToString(), "SelectedTask");
     }
 }

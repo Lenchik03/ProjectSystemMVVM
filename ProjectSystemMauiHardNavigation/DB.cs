@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectSystemMauiHardNavigation
 {
@@ -14,10 +13,12 @@ namespace ProjectSystemMauiHardNavigation
         private List<TaskModel> Tasks { get; set; } = new List<TaskModel>();
 
         private List<ProjectModel> Projects { get; set; } = new List<ProjectModel>();
+        private List<User> Users { get; set; } = new();
         private ProjectModel Project { get; set; }
 
         private int lastid = 1;
         private int plastid = 1;
+        private int ulastid = 1;
         public DB()
         {
             Tasks.Add(new TaskModel
@@ -32,6 +33,14 @@ namespace ProjectSystemMauiHardNavigation
                 Id = 1,
                 Title = "апавпавп",
                 Deadlines = 5
+            });
+
+            Users.Add(new User
+            {
+                Id = 1,
+                FirstName = "Alena",
+                LastName = "Nikitina",
+                Password = "123456"
             });
         }
         public static DB GetInstance()

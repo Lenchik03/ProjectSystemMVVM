@@ -32,7 +32,13 @@
 
         private async void NewTaskClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NewTaskWindow(new TaskModel()));
+            ShellNavigationQueryParameters shellQuery = new ShellNavigationQueryParameters()
+
+            {
+                { "TaskId", 0}
+            };
+            await Shell.Current.GoToAsync("EditTask", shellQuery);
+            //await Navigation.PushAsync(new NewTaskWindow(new TaskModel()));
         }
 
         private async void UpdateTaskClick(object sender, EventArgs e)
@@ -40,7 +46,7 @@
             ShellNavigationQueryParameters shellQuery = new ShellNavigationQueryParameters()
 
             {
-                { "SelectedTask", SelectedTask}
+                { "TaskId", SelectedTask.Id}
             };
             await Shell.Current.GoToAsync("EditTask", shellQuery);
             //await Navigation.PushAsync(new NewTaskWindow(SelectedTask));

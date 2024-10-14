@@ -1,13 +1,34 @@
 namespace ProjectSystemMauiHardNavigation;
+[QueryProperty(nameof(ProjectId), "ProjectId")]
 
 public partial class NewProjectPage : ContentPage
 {
+    private int projectId;
+
     public ProjectModel Project { get; set; }
 
-    public NewProjectPage(ProjectModel project)
+    public int ProjectId
+    {
+        get => projectId;
+        set
+        {
+            projectId = value;
+            if(ProjectId == 0)
+                Project = new ProjectModel();
+            else
+                GetProjectById(projectId);
+        }
+    }
+
+    private async void GetProjectById(int projectId)
+    {
+        Project = await DB.GetInstance().ProjectById(projectId);
+    }
+
+    public NewProjectPage()
     {
         InitializeComponent();
-        this.Project = project;
+
         BindingContext = this;
     }
 
@@ -32,4 +53,6 @@ public partial class NewProjectPage : ContentPage
             await Navigation.PopAsync();
         }
     }
+
+    
 }

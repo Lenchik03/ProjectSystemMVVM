@@ -3,9 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.ProjectPage"
              Title="ProjectPage">
-    <StackLayout>
-        <Button Text="Все задачи"
-         Clicked= "TasksClick" />
+    <StackLayout Margin="7">
         <ListView ItemsSource="{Binding Projects}" SelectedItem="{Binding SelectedProject}">
             <ListView.ItemTemplate>
                 <DataTemplate>

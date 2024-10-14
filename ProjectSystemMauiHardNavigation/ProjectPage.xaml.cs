@@ -37,12 +37,24 @@ public partial class ProjectPage : ContentPage
 
     private async void NewProjectClick(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new NewProjectPage(new ProjectModel()));
+        Dictionary<string, object> dictionary = new Dictionary<string, object>
+        {
+            {"ProjectId", SelectedProject.Id}
+        };
+
+        await Shell.Current.GoToAsync("EditProject", dictionary);
+        //await Navigation.PushAsync(new NewProjectPage(new ProjectModel()));
     }
 
     private async void UpdateProjectClick(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new NewProjectPage(SelectedProject));
+        Dictionary<string, object> dictionary = new Dictionary<string, object>
+        {
+            {"ProjectId", SelectedProject.Id}
+        };
+
+        await Shell.Current.GoToAsync("EditProject", dictionary);
+        //await Navigation.PushAsync(new NewProjectPage(SelectedProject));
     }
 
     private async void DeleteProjectClick(object sender, EventArgs e)

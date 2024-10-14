@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:ProjectSystemMauiHardNavigation"
     Shell.FlyoutBehavior="Flyout"
     Title="ProjectSystemMauiHardNavigation">
-
+    
         <FlyoutItem>
         <Tab>
             <ShellContent 
@@ -36,15 +36,15 @@ ContentTemplate="{DataTemplate local:ProjectPage}"/>
             <ShellContent
                 Title="Задачи1"         
 Route="TasksPage"
-        ContentTemplate="{DataTemplate local:MainPage}"/>
+        ContentTemplate="{DataTemplate local:LoginPage}"/>
             
         </Tab>
-        <Tab>
+        <!--<Tab>
             <ShellContent 
                 Title="Проекты1"
 Route="ProjectsPage"
 ContentTemplate="{DataTemplate local:ProjectPage}"/>
-        </Tab>
+        </Tab>-->
     </TabBar>
 
 </Shell>
