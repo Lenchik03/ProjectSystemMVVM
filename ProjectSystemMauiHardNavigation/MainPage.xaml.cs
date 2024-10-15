@@ -58,10 +58,8 @@
             UpdateList();
         }
 
-        private async void ProjectsClick(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ProjectPage());
-        }
+
+        
     }
 
 }

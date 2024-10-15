@@ -6,11 +6,35 @@
     xmlns:local="clr-namespace:ProjectSystemMauiHardNavigation"
     Shell.FlyoutBehavior="Flyout"
     Title="ProjectSystemMauiHardNavigation"
-    FlyoutFooter="{DataTemplate local:FlyoutFooter}"
-    FlyoutHeader="{DataTemplate local:FlyoutHeader}"
-    FlyoutBackgroundColor="LightPink">
+    FlyoutBackgroundColor="LightPink"
+    >
+    <Shell.FlyoutHeader>
+        <local:FlyoutHeader/>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <local:FlyoutFooter/>
+    </Shell.FlyoutFooter>
+
     
-    <FlyoutItem>
+    
+    <TabBar>
+        <Tab>
+            <ShellContent
+                Title="Авторизация"         
+Route="LoginPage"
+        ContentTemplate="{DataTemplate local:LoginPage}"/>
+
+        </Tab>
+        <!--<Tab>
+            <ShellContent 
+                Title="Проекты1"
+Route="ProjectsPage"
+ContentTemplate="{DataTemplate local:ProjectPage}"/>
+        </Tab>-->
+    </TabBar>
+    
+    <FlyoutItem Title="Задачи и Проекты">
         <Tab>
             <ShellContent 
                 Title="Задачи"
@@ -22,19 +46,24 @@ Route="ProjectsPage"
 ContentTemplate="{DataTemplate local:ProjectPage}"/>
         </Tab>
         
+        
     </FlyoutItem>
+    <MenuItem Text="Выйти" Clicked="LogOutClick"/>
 
-    
-    <!--<FlyoutItem
-        Title="Проекты"
-        Route="ProjectsPage">
-        <Tab>
-            <ShellContent 
+    <!--<FlyoutItem>
+        <Tab Title="Задачи">
+        <ShellContent 
+                Title="Задачи"
+Route="TasksPage"
+                ContentTemplate="{DataTemplate local:MainPage}"/>
+        <ShellContent 
+                Title="Проекты"
+Route="ProjectsPage"
 ContentTemplate="{DataTemplate local:ProjectPage}"/>
         </Tab>
     </FlyoutItem>-->
 
-    <TabBar>
+    <!--<TabBar>
         <Tab>
             <ShellContent
                 Title="Задачи1"         
@@ -42,12 +71,12 @@ Route="TasksPage"
         ContentTemplate="{DataTemplate local:LoginPage}"/>
             
         </Tab>
-        <!--<Tab>
+        --><!--<Tab>
             <ShellContent 
                 Title="Проекты1"
 Route="ProjectsPage"
 ContentTemplate="{DataTemplate local:ProjectPage}"/>
-        </Tab>-->
-    </TabBar>
+        </Tab>--><!--
+    </TabBar>-->
 
 </Shell>

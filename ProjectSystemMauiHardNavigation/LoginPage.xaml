@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.LoginPage"
              Title="LoginPage">
+    
     <StackLayout Margin="30">
         <Label Text="Логин"/>
         <Entry Text="{Binding LastName}"/>
         <Label Text="Пароль"/>
         <Entry Text="{Binding Password}"/>
+        <Button Text="Вход" Clicked="SignInClick"/>
     </StackLayout>
 </ContentPage>

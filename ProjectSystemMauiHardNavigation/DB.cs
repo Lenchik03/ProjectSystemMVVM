@@ -50,6 +50,13 @@ namespace ProjectSystemMauiHardNavigation
             return instance;
         }
 
+        public async Task<List<User>> GetUsers()
+        {
+            List<User> users = new List<User>(Users);
+            await Task.Delay(1000);
+            return users;
+        }
+
         public async Task<List<TaskModel>> GetTasks()
         {
             List<TaskModel> taskModels = new List<TaskModel>(Tasks);
