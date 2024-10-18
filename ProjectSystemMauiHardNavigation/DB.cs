@@ -57,6 +57,19 @@ namespace ProjectSystemMauiHardNavigation
             return users;
         }
 
+        public async Task NewUser(User user)
+        {
+            await Task.Delay(1000);
+            User newuser = new User()
+            {
+                Id = ++ulastid,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Password = user.Password     
+            };
+            Users.Add(newuser);   
+        }
+
         public async Task<List<TaskModel>> GetTasks()
         {
             List<TaskModel> taskModels = new List<TaskModel>(Tasks);

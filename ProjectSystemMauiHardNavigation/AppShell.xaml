@@ -26,12 +26,12 @@ Route="LoginPage"
         ContentTemplate="{DataTemplate local:LoginPage}"/>
 
         </Tab>
-        <!--<Tab>
+        <Tab>
             <ShellContent 
-                Title="Проекты1"
-Route="ProjectsPage"
-ContentTemplate="{DataTemplate local:ProjectPage}"/>
-        </Tab>-->
+                Title="Регистрация"
+Route="RegistrationPage"
+ContentTemplate="{DataTemplate local:RegistrationPage}"/>
+        </Tab>
     </TabBar>
     
     <FlyoutItem Title="Задачи и Проекты">
