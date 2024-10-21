@@ -70,8 +70,5 @@ public partial class ProjectPage : ContentPage
         }
     }
 
-    private async void TasksClick(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new MainPage());
-    }
+    
 }

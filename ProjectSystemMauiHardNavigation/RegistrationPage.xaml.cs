@@ -4,7 +4,7 @@ namespace ProjectSystemMauiHardNavigation;
 
 public partial class RegistrationPage : ContentPage
 {
-	public User User { get; set; }
+	public User User { get; set; } = new User();
 	public RegistrationPage()
 	{
 		InitializeComponent();

@@ -24,14 +24,13 @@
                 Title="Авторизация"         
 Route="LoginPage"
         ContentTemplate="{DataTemplate local:LoginPage}"/>
-
-        </Tab>
-        <Tab>
             <ShellContent 
                 Title="Регистрация"
 Route="RegistrationPage"
 ContentTemplate="{DataTemplate local:RegistrationPage}"/>
+
         </Tab>
+        
     </TabBar>
     
     <FlyoutItem Title="Задачи и Проекты">
