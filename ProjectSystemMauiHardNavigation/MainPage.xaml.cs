@@ -8,7 +8,7 @@
 
         public TaskModel SelectedTask { get; set; }
 
-     
+        private DBBContext bBContext;
 
         public MainPage()
         {
