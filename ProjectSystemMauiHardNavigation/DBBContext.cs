@@ -22,7 +22,14 @@ namespace ProjectSystemMauiHardNavigation
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(filename);
+            var sqlitePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Database");
+            Directory.CreateDirectory(sqlitePath);
+            var fileName = $"{sqlitePath}\f{filename}";
+            if (!File.Exists(fileName))
+            {
+                File.Create(fileName);
+            }
+            optionsBuilder.UseSqlite($"Data Sourse={fileName}");
             base.OnConfiguring(optionsBuilder);
         }
     }

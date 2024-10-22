@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.RegistrationPage"
-             Title="RegistrationPage">
+             Title="RegistrationPage"
+             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation">
+
+    <ContentPage.BindingContext>
+        <local:RegistrationMVVM/>
+    </ContentPage.BindingContext>
     <StackLayout>
         <Label Text="Имя"/>
         <Entry Text="{Binding User.FirstName}"/>
@@ -11,6 +16,6 @@
         <Label Text="Придумайте пароль"/>
         <Entry Text="{Binding User.Password}"/>
 
-        <Button Text="Сохранить" Clicked="SaveClick"/>
+        <Button Text="Сохранить" Command="{Binding Save}"/>
     </StackLayout>
 </ContentPage>

@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.ProjectPage"
-             Title="ProjectPage">
+             Title="ProjectPage"
+             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation">
+
+    <ContentPage.BindingContext>
+    <local:ProjectMVVM/>
+    </ContentPage.BindingContext>
     <StackLayout Margin="7">
         <ListView ItemsSource="{Binding Projects}" SelectedItem="{Binding SelectedProject}">
             <ListView.ItemTemplate>
@@ -34,9 +39,9 @@
         </ListView>
 
         <HorizontalStackLayout>
-            <Button Text="Добавить" Clicked="NewProjectClick"/>
-            <Button Text="Изменить" Clicked="UpdateProjectClick"/>
-            <Button Text="Удалить" Clicked="DeleteProjectClick"/>
+            <Button Text="Добавить" Command="{Binding AddProject}"/>
+            <Button Text="Изменить" Command="{Binding UpdateProject}"/>
+            <Button Text="Удалить" Command="{Binding RemoveProject}"/>
         </HorizontalStackLayout>
     </StackLayout>
 </ContentPage>

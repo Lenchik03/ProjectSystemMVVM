@@ -16,7 +16,22 @@
         <local:FlyoutFooter/>
     </Shell.FlyoutFooter>
 
-    
+
+    <FlyoutItem Title="Задачи и Проекты">
+        <Tab>
+            <ShellContent 
+                Title="Задачи"
+Route="TasksPage"
+                ContentTemplate="{DataTemplate local:MainPage}"/>
+            <ShellContent 
+                Title="Проекты"
+Route="ProjectsPage"
+ContentTemplate="{DataTemplate local:ProjectPage}"/>
+        </Tab>
+
+
+    </FlyoutItem>
+    <MenuItem Text="Выйти" Clicked="LogOutClick"/>
     
     <TabBar>
         <Tab>
@@ -33,21 +48,7 @@ ContentTemplate="{DataTemplate local:RegistrationPage}"/>
         
     </TabBar>
     
-    <FlyoutItem Title="Задачи и Проекты">
-        <Tab>
-            <ShellContent 
-                Title="Задачи"
-Route="TasksPage"
-                ContentTemplate="{DataTemplate local:MainPage}"/>
-            <ShellContent 
-                Title="Проекты"
-Route="ProjectsPage"
-ContentTemplate="{DataTemplate local:ProjectPage}"/>
-        </Tab>
-        
-        
-    </FlyoutItem>
-    <MenuItem Text="Выйти" Clicked="LogOutClick"/>
+    
 
     <!--<FlyoutItem>
         <Tab Title="Задачи">

@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.NewTaskWindow"
-             Title="NewTaskWindow">
+             Title="NewTaskWindow"
+             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation">
+    <ContentPage.BindingContext>
+        <local:NewTaskMVVM/>
+    </ContentPage.BindingContext>
     <StackLayout>
         <Label Text="Название"/>
         <Entry Text="{Binding TaskM.Title}"/>
@@ -10,6 +14,6 @@
         <Entry Text="{Binding TaskM.Description}"/>
         <Label Text="Проект"/>
         <Picker ItemsSource="{Binding Projects}" SelectedItem="{Binding Project}" ItemDisplayBinding="{Binding Title}" />
-        <Button Text="Сохранить" Clicked="SaveClick"/>
+        <Button Text="Сохранить" Command="{Binding Save}"/>
     </StackLayout>
 </ContentPage>

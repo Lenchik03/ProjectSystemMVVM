@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace ProjectSystemMauiHardNavigation
 {
-    internal class VmCommand: ICommand
+    public class VmCommand: ICommand
     {
         Action action;
 
