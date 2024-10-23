@@ -4,10 +4,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectSystemMauiHardNavigation.Model;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
-    public class TaskMVVM: BaseVM
+    public class TaskMVVM : BaseVM
     {
         public List<ProjectModel> Projects { get; set; }
 
@@ -15,7 +16,7 @@ namespace ProjectSystemMauiHardNavigation
 
         public TaskModel SelectedTask { get; set; }
 
-        public VmCommand AddTask {  get; set; }
+        public VmCommand AddTask { get; set; }
         public VmCommand UpdateTask { get; set; }
         public VmCommand RemoveTask { get; set; }
 
@@ -33,7 +34,7 @@ namespace ProjectSystemMauiHardNavigation
 
         public TaskMVVM()
         {
-            AddTask = new VmCommand(async () => 
+            AddTask = new VmCommand(async () =>
             {
                 ShellNavigationQueryParameters shellQuery = new ShellNavigationQueryParameters()
 
@@ -41,7 +42,7 @@ namespace ProjectSystemMauiHardNavigation
                     { "TaskId", 0}
                 };
                 await Shell.Current.GoToAsync("EditTask", shellQuery);
-            //await Navigation.PushAsync(new NewTaskWindow(new TaskModel()));
+                //await Navigation.PushAsync(new NewTaskWindow(new TaskModel()));
             });
 
             UpdateTask = new VmCommand(async () =>

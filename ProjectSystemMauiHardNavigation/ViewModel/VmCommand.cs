@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
-    public class VmCommand: ICommand
+    public class VmCommand : ICommand
     {
         Action action;
 

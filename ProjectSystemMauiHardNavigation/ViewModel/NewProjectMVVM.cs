@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectSystemMauiHardNavigation.Model;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
     [QueryProperty(nameof(ProjectId), "ProjectId")]
     public class NewProjectMVVM
@@ -51,7 +52,7 @@ namespace ProjectSystemMauiHardNavigation
             Project = await DB.GetInstance().ProjectById(projectId);
         }
 
-        
+
 
         public void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
@@ -60,6 +61,6 @@ namespace ProjectSystemMauiHardNavigation
             Project.Deadlines = value;
         }
 
-        
+
     }
 }

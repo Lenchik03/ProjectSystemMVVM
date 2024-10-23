@@ -8,7 +8,6 @@ public partial class NewProjectPage : ContentPage
     {
         InitializeComponent();
 
-        BindingContext = this;
     }
 
 

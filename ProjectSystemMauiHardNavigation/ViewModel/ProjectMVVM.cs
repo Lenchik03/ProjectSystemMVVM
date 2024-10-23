@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectSystemMauiHardNavigation.Model;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
     public class ProjectMVVM : BaseVM
     {
@@ -22,7 +23,7 @@ namespace ProjectSystemMauiHardNavigation
             {
                 Dictionary<string, object> dictionary = new Dictionary<string, object>
                 {
-                    {"ProjectId", SelectedProject.Id}
+                    {"ProjectId",0}
                 };
 
                 await Shell.Current.GoToAsync("EditProject", dictionary);
@@ -31,7 +32,7 @@ namespace ProjectSystemMauiHardNavigation
 
             UpdateProject = new VmCommand(async () =>
             {
-                    Dictionary<string, object> dictionary = new Dictionary<string, object>
+                Dictionary<string, object> dictionary = new Dictionary<string, object>
                     {
                         {"ProjectId", SelectedProject.Id}
                     };
@@ -74,4 +75,4 @@ namespace ProjectSystemMauiHardNavigation
         }
 
     }
-    }
+}

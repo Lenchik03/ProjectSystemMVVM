@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
     public class BaseVM : INotifyPropertyChanged
     {

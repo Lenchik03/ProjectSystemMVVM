@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.RegistrationPage"
              Title="RegistrationPage"
-             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation">
+             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation.ViewModel">
 
     <ContentPage.BindingContext>
         <local:RegistrationMVVM/>

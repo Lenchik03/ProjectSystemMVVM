@@ -1,4 +1,6 @@
-﻿namespace ProjectSystemMauiHardNavigation
+﻿using ProjectSystemMauiHardNavigation.ViewModel;
+
+namespace ProjectSystemMauiHardNavigation
 {
     public partial class MainPage : ContentPage
     {
@@ -8,8 +10,8 @@
         {
             InitializeComponent();
 
-           
-            BindingContext = new TaskMVVM();
+
+            //BindingContext = new TaskMVVM();
         }
 
 

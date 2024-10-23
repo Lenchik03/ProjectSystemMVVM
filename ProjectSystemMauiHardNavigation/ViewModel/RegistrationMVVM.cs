@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using ProjectSystemMauiHardNavigation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
     public class RegistrationMVVM
     {
@@ -17,7 +18,7 @@ namespace ProjectSystemMauiHardNavigation
             Save = new VmCommand(async () =>
             {
                 await DB.GetInstance().NewUser(User);
-                await Shell.Current.GoToAsync("//TasksPage");
+                await Shell.Current.GoToAsync("//LoginPage");
             });
         }
     }

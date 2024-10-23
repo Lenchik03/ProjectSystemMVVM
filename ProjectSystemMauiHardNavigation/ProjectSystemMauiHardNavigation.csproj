@@ -64,25 +64,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="FlyoutFooter.xaml">
+	  <MauiXaml Update="View\FlyoutFooter.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="FlyoutHeader.xaml">
+	  <MauiXaml Update="View\FlyoutHeader.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="LoginPage.xaml">
+	  <MauiXaml Update="View\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="NewProjectPage.xaml">
+	  <MauiXaml Update="View\NewProjectPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="NewTaskWindow.xaml">
+	  <MauiXaml Update="View\NewTaskWindow.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ProjectPage.xaml">
+	  <MauiXaml Update="View\ProjectPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="RegistrationPage.xaml">
+	  <MauiXaml Update="View\RegistrationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

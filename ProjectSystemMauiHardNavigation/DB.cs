@@ -3,43 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ProjectSystemMauiHardNavigation.Model;
 
 namespace ProjectSystemMauiHardNavigation
 {
     public class DB
     {
-        private DBBContext bBContext = new DBBContext("db.db");
+        private DBBContext bBContext = new DBBContext("Database");
         private static DB instance;
 
         
         private ProjectModel Project { get; set; }
 
-        private int lastid = 1;
-        private int plastid = 1;
-        private int ulastid = 1;
         public DB()
         {
-            bBContext.Tasks.Add(new TaskModel
-            {
-                Id = 1,
-                Title = "апавпавп",
-                Description = "dsgfdsgrsg"
-            });
-
-            bBContext.Projects.Add(new ProjectModel
-            {
-                Id = 1,
-                Title = "апавпавп",
-                Deadlines = 5
-            });
-
-            bBContext.Users.Add(new User
-            {
-                Id = 1,
-                FirstName = "Alena",
-                LastName = "Nikitina",
-                Password = "123456"
-            });
+            bBContext.SaveChangesAsync();
         }
         public static DB GetInstance()
         {
@@ -60,7 +38,7 @@ namespace ProjectSystemMauiHardNavigation
             await Task.Delay(1000);
             User newuser = new User()
             {
-                Id = ++ulastid,
+
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Password = user.Password     
@@ -97,7 +75,6 @@ namespace ProjectSystemMauiHardNavigation
             await Task.Delay(1000);
             TaskModel newTask = new TaskModel()
             {
-                Id = ++lastid,
                 Title = task.Title,
                 Description = task.Description,
                 ProjectId = task.ProjectId,
@@ -162,7 +139,6 @@ namespace ProjectSystemMauiHardNavigation
             await Task.Delay(1000);
             ProjectModel newProject = new ProjectModel()
             {
-                Id = ++plastid,
                 Title = project.Title,
                 Deadlines = project.Deadlines,
                 Tasks = project.Tasks

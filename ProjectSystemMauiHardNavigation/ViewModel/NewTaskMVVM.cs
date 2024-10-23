@@ -1,16 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using ProjectSystemMauiHardNavigation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
-    public class NewTaskMVVM: BaseVM, IQueryAttributable
+    public class NewTaskMVVM : BaseVM, IQueryAttributable
     {
         public VmCommand Save { get; set; }
-   
+
         public TaskModel TaskM { get; set; }
 
         public List<ProjectModel> Projects { get; set; }
@@ -39,7 +40,7 @@ namespace ProjectSystemMauiHardNavigation
                     await Shell.Current.GoToAsync("//TasksPage");
                 }
             });
-    }
+        }
 
         private async void UpdateList()
         {
@@ -68,7 +69,7 @@ namespace ProjectSystemMauiHardNavigation
             //await DisplayAlert("fdfdf", query["SelectedTask"].ToString(), "SelectedTask");
         }
 
-        
+
 
     }
 }

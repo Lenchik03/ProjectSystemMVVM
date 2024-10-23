@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.LoginPage"
              Title="LoginPage"
-             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation">
+             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation.ViewModel">
     <ContentPage.BindingContext>
         <local:LoginMVVM/>
     </ContentPage.BindingContext>

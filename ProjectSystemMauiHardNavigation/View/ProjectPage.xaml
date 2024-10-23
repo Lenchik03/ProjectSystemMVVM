@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjectSystemMauiHardNavigation.ProjectPage"
              Title="ProjectPage"
-             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation">
+             xmlns:local ="clr-namespace:ProjectSystemMauiHardNavigation.ViewModel">
 
     <ContentPage.BindingContext>
     <local:ProjectMVVM/>
@@ -16,7 +16,7 @@
                         <StackLayout>
                             <StackLayout>
                                 <Label Text="{Binding Title}"/>
-                                <Label Text="{Binding Deadlines}"/>
+                                <Label Text="{Binding Path=Deadlines, StringFormat=\{0:n0\}}"/>
                             </StackLayout>
                             <!--<Label Text="Задачи"/>
 <CarouselView ItemsSource="{Binding Tasks}" >

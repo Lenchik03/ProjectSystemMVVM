@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectSystemMauiHardNavigation.Model;
 
-namespace ProjectSystemMauiHardNavigation
+namespace ProjectSystemMauiHardNavigation.ViewModel
 {
     public class LoginMVVM
     {
@@ -31,6 +32,6 @@ namespace ProjectSystemMauiHardNavigation
                     await Application.Current.MainPage.DisplayAlert("Ошибка", "Неверный логин или пароль", "ОК");
             });
         }
-        
+
     }
 }

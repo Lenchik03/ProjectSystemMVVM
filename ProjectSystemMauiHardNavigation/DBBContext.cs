@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProjectSystemMauiHardNavigation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace ProjectSystemMauiHardNavigation
             {
                 File.Create(fileName);
             }
-            optionsBuilder.UseSqlite($"Data Sourse={fileName}");
+            optionsBuilder.UseSqlite($"Filename={fileName}");
             base.OnConfiguring(optionsBuilder);
         }
     }
