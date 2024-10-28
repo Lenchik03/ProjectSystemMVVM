@@ -1,3 +1,5 @@
+using ProjectSystemMauiHardNavigation.ViewModel;
+
 namespace ProjectSystemMauiHardNavigation;
 
 public partial class LoginPage : ContentPage
@@ -9,6 +11,9 @@ public partial class LoginPage : ContentPage
 		Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
 	}
 
+    protected override void OnAppearing()
+    {
+        ((LoginMVVM)BindingContext).OnAppearing();
+    }
 
-    
 }

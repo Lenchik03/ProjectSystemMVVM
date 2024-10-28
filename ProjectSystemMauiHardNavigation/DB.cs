@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using ProjectSystemMauiHardNavigation.Model;
 
 namespace ProjectSystemMauiHardNavigation
@@ -49,7 +50,7 @@ namespace ProjectSystemMauiHardNavigation
 
         public async Task<List<TaskModel>> GetTasks()
         {
-            List<TaskModel> taskModels = new List<TaskModel>(bBContext.Tasks);
+            List<TaskModel> taskModels = new List<TaskModel>(bBContext.Tasks.Include(s => s.Project));
             await Task.Delay(1000);
             return taskModels;
         }
@@ -81,6 +82,8 @@ namespace ProjectSystemMauiHardNavigation
                 Project = task.Project
             };
             await bBContext.Tasks.AddAsync(newTask);
+            //var tasksIntoProject =  await bBContext.Tasks.Where(s => s.ProjectId == newTask.ProjectId).ToListAsync();
+
             newTask.Project.Tasks.Add(newTask);
             await bBContext.SaveChangesAsync();
         }

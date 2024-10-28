@@ -7,7 +7,7 @@ using ProjectSystemMauiHardNavigation.Model;
 
 namespace ProjectSystemMauiHardNavigation.ViewModel
 {
-    public class LoginMVVM
+    public class LoginMVVM: BaseVM
     {
         public string LastName { get; set; }
         public string Password { get; set; }
@@ -16,6 +16,11 @@ namespace ProjectSystemMauiHardNavigation.ViewModel
 
         public List<User> Users { get; set; }
 
+        public void OnAppearing()
+        {
+            Signal(LastName);
+            Signal(Password);
+        }
 
         public LoginMVVM()
         {
@@ -25,6 +30,8 @@ namespace ProjectSystemMauiHardNavigation.ViewModel
                 var user = Users.FirstOrDefault(s => s.LastName == LastName && s.Password == Password);
                 if (user != null)
                 {
+                    LastName = "";
+                    Password = "";
                     await Shell.Current.GoToAsync("//TasksPage");
                     Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
                 }

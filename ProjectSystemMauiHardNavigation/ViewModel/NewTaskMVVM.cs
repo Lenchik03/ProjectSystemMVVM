@@ -50,9 +50,11 @@ namespace ProjectSystemMauiHardNavigation.ViewModel
                 Project = Projects.FirstOrDefault(s => s.Id == TaskM.ProjectId);
             }
 
-            Signal(nameof(Project));
             Signal(nameof(Projects));
+            Signal(nameof(Project));
         }
+
+       
 
         public async void ApplyQueryAttributes(IDictionary<string, object> query)
         {
@@ -68,7 +70,10 @@ namespace ProjectSystemMauiHardNavigation.ViewModel
             //BindingContext = this;
             //await DisplayAlert("fdfdf", query["SelectedTask"].ToString(), "SelectedTask");
         }
-
+        internal void OnAppearing()
+        {
+            //UpdateList();
+        }
 
 
     }

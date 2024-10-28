@@ -25,7 +25,6 @@ namespace ProjectSystemMauiHardNavigation.Model
             }
         }
 
-        [NotMapped]
         public List<TaskModel> Tasks { get; set; } = new List<TaskModel>();
 
     }

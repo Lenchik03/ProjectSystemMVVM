@@ -8,7 +8,7 @@ using ProjectSystemMauiHardNavigation.Model;
 namespace ProjectSystemMauiHardNavigation.ViewModel
 {
     [QueryProperty(nameof(ProjectId), "ProjectId")]
-    public class NewProjectMVVM
+    public class NewProjectMVVM: BaseVM
     {
         private int projectId;
         public VmCommand Save { get; set; }
@@ -50,6 +50,7 @@ namespace ProjectSystemMauiHardNavigation.ViewModel
         private async void GetProjectById(int projectId)
         {
             Project = await DB.GetInstance().ProjectById(projectId);
+            Signal(nameof(Project));
         }
 
 
