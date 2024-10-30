@@ -23,7 +23,7 @@ namespace ProjectSystemMauiHardNavigation.ViewModel
             Save = new VmCommand(async () =>
             {
                 await DB.GetInstance().NewUser(User);
-                User = null;
+                User = new User();
                 await Shell.Current.GoToAsync("//LoginPage");
             });
         }

@@ -92,11 +92,7 @@ namespace ProjectSystemMauiHardNavigation
         {
             //var task1 = TaskById(id);
             var task = bBContext.Tasks.FirstOrDefault(s => s.Id == task1.Id);
-            task.Title = task1.Title;
-            task.Description = task1.Description;
-            task.ProjectId = task1.ProjectId;
-            task.Project = task1.Project;
-            await Task.Delay(1000);
+            bBContext.Entry(task).CurrentValues.SetValues(task1);
             await bBContext.SaveChangesAsync();
         }
 
